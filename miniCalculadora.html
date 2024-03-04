@@ -1,0 +1,47 @@
+<html>
+ <head>
+   <title>Mini Calculadora</title>
+ </head>
+ <body>
+    <h1>Mini Calculadora</h1>
+    <button onclick="soma()">+</button>
+    <button onclick="subtracao()">-</button>
+    <button onclick="multiplicacao()">X</button>
+    <button onclick="divisao()">/</button>
+    <button onclick="limpa()">Limpar a tela</button>
+    <div id="output"></div>
+    <script>
+        function numero(){
+            let num = parseInt(prompt("digite um numero"))
+        }
+        numero()
+        var mensagem = ""
+        function soma(){
+            let numSo = parseInt(prompt("digite outro numero"))
+            mensagem = numSo + num
+            output.innerHTML = mensagem
+        }
+        function subtracao() {
+            let numSu = parseInt(prompt("digite outro numero"))
+            mensagem = numSu - num
+            output.innerHTML = mensagem
+        }
+        function multiplicacao(){
+            let numMu = parseInt(prompt("digite outro numero"))
+            mensagem = numMu * num
+            output.innerHTML = mensagem
+        }
+        function divisao (){
+            let numDi = parseInt(prompt("digite outro numero"))
+            mensagem = numDi / num
+            output.innderHTML = mensagem
+        }
+        function limpa(){
+            mensagem = ""
+            output.innerHTML = mensagem
+            numero()
+        }
+        let output = document.querySelector('#output')
+    </script>
+ </body>
+</html>
