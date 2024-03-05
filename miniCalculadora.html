@@ -9,39 +9,47 @@
     <button onclick="multiplicacao()">X</button>
     <button onclick="divisao()">/</button>
     <button onclick="limpa()">Limpar a tela</button>
+    <button onclick="deNovo()">Começa de novo</button>
     <div id="output"></div>
     <script>
-        function numero(){
-            let num = parseInt(prompt("digite um numero"))
+        let num = parseInt(prompt("digite um numero"))
+        function escreve(){
+            var output = document.querySelector('#output')
+            output.innerHTML = num
         }
-        numero()
-        var mensagem = ""
+        escreve()
+        function numero(){
+            num = parseInt(prompt("digite um numero"))
+        }
         function soma(){
             let numSo = parseInt(prompt("digite outro numero"))
-            mensagem = numSo + num
-            output.innerHTML = mensagem
+            num = num + numSo
+            escreve()
         }
         function subtracao() {
             let numSu = parseInt(prompt("digite outro numero"))
-            mensagem = numSu - num
-            output.innerHTML = mensagem
+            num = num - numSu
+            escreve()
         }
         function multiplicacao(){
             let numMu = parseInt(prompt("digite outro numero"))
-            mensagem = numMu * num
-            output.innerHTML = mensagem
+            num = numMu * num
+            escreve()
         }
         function divisao (){
             let numDi = parseInt(prompt("digite outro numero"))
-            mensagem = numDi / num
-            output.innderHTML = mensagem
+            num = num / numDi
+            escreve()
         }
         function limpa(){
-            mensagem = ""
-            output.innerHTML = mensagem
-            numero()
+            num = ""
+            escreve()
         }
-        let output = document.querySelector('#output')
+        function deNovo(){
+            numero()
+            escreve()
+        }
+       
     </script>
  </body>
 </html>
